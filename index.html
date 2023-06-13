@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kuzmich Aleksandra | Lab 1 </title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+  <style>
+
+    body {
+      color: #4e3824;
+      background-color: #e5d0a6;
+      padding: 0 200px;
+    }
+
+    .social-icons {
+  display: flex;
+  justify-content: flex-end;
+    }
+
+    .social-icons a {
+      display: inline-block;
+      margin: 0 10px;
+      font-size: 50px;
+      color: #ac7c59;
+      text-decoration: none;
+      margin-top: -65px; 
+      margin-right: 50px;
+      
+    }
+
+    .social-icons a:hover {
+      color: #c28233c3;
+    }
+
+    a {
+      margin: 20px;
+    }
+
+    .bio {
+      background-color: rgb(244, 191, 127);
+      padding: 10px;
+      margin-top: 6px;
+      border-radius: 20px 10px 0; 
+    }
+
+    .bio h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .bio p {
+      font-size: 16px;
+      text-align: center;
+      line-height: 30px;
+    }
+
+    .header {
+      color: #4e3824;
+      background-color: rgb(244, 191, 127);
+      padding: 20px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .profile-photo {
+      border-radius: 30%;
+    }
+
+    .container {
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .container .profile-photo {
+      margin-right: 30px; /* Adjust the value as needed */
+    }
+
+    .container .bio {
+      flex: 1;
+      font-weight: bold;
+    }
+
+    .portfolio {
+      color: #4e3824;
+      background-color: rgb(244, 191, 127);
+      padding: 10px;
+      margin-bottom: 20px;
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+    }
+  .portfolio-photo {
+    width: 240px;
+    height: 240px;
+    object-fit: cover;
+    margin-left: 15px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    position: relative; /* Added position */
+    transition: filter 0.3s; /* Added transition */
+  }
+
+  .portfolio-photo:hover {
+    filter: grayscale(100%); /* Change image color */
+  }
+  .image-container:hover img {
+  filter: grayscale(100%); /* Convert image to grayscale */
+}
+
+  
+  .image-container {
+  position: relative;
+  display: inline-block;
+
+}
+
+.text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-45%, -50%);
+  background-color: #ac7c59;
+  color: #2c1f13;
+  font-weight: bold;
+  padding: 10px; /* Increased padding */
+  width: 180px; /* Set the desired width */
+  text-align: center; /* Align text to the center */
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s;
+}
+
+.image-container:hover .text-overlay {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <section class="header">
+      <h1>Heyy, I am Alex!</h1>
+    </section>
+  </header>
+  <main>
+    <div class="container">
+      <img src="https://goo.su/3N8Cvzl" alt="Profile Photo" height="300" class="profile-photo">
+
+      <section class="bio">
+        <h2>About Me </h2>
+            <p> ₊‧⁺˖⋆ 18 years old front-end learner ⋆˖⁺‧₊<br>
+                ₊‧⁺˖⋆ in love with folk and folk-rock music ⋆˖⁺‧₊<br>                   
+                ₊‧⁺˖⋆ Moscow ⤏ Innopolis ⋆˖⁺‧₊
+        </p>
+      </section>
+      
+    </div>
+    <section class="social-icons">
+        <a href="https://www.instagram.com/fegur_natturunnar/?hl=ru" id="inst-link" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://github.com/pferdlexxie" id="gh-link" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://t.me/pferdlexxie" id="tg-link" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-telegram"></i>
+        </a>
+        <a href="mailto:alexandrakuzmich@mail.ru" id="email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </section>
+    <section class="portfolio">
+        <p>
+            Projects I would like to do. Analogue to portfolio
+        </p>
+    </section>
+    <div class="image-container">
+        <img src="https://aminus3.s3.amazonaws.com/image/g0042/u00041500/i02283774/2dbda63a08ce7b1bbcc26ebc8ecf3c51_giant.jpg" alt="portfolio photo" height="200" class="portfolio-photo"> 
+        <div class="text-overlay">
+          <p>Website for a music group</p>
+        </div>
+      </div>
+      <div class="image-container">
+        <img src="https://aminus3.s3.amazonaws.com/image/g0032/u00031911/i01909139/2a8987593e8066a63662cd84b4799eaa_giant.jpg" alt="portfolio photo" height="200" class="portfolio-photo"> 
+        <div class="text-overlay">
+          <p>Website for a pottery</p>
+        </div>
+      </div>
+      <div class="image-container">
+        <img src="https://marchelache.com/storage/f6/71/f67198bb-32c5-47f2-a78d-dcdb6e33447e/c/zdomyqzl2z-xl.jpg" alt="portfolio photo" height="200" class="portfolio-photo"> 
+        <div class="text-overlay">
+          <p>Website for a dog shelter</p>
+        </div>
+      </div>
+      
+    <!-- <img src="https://aminus3.s3.amazonaws.com/image/g0042/u00041500/i02283774/2dbda63a08ce7b1bbcc26ebc8ecf3c51_giant.jpg" alt="portfolio photo" height="200" class="portfolio-photo" data-description="Image 1 Description"> 
+    <img src="https://aminus3.s3.amazonaws.com/image/g0032/u00031911/i01909139/2a8987593e8066a63662cd84b4799eaa_giant.jpg" alt="portfolio photo" height="200" class="portfolio-photo" data-description="Image 1 Description"> 
+    <img src="https://marchelache.com/storage/f6/71/f67198bb-32c5-47f2-a78d-dcdb6e33447e/c/zdomyqzl2z-xl.jpg" alt="portfolio photo" height="200" class="portfolio-photo" data-description="Image 1 Description">  -->
+
+      
+</main>
+</body>
+</html>
