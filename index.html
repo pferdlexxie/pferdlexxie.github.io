@@ -3,6 +3,7 @@
 <head>
   <title>Kuzmich Aleksandra | Lab 1 </title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
   <style>
@@ -140,7 +141,57 @@
   visibility: visible;
   opacity: 1;
 }
+.divider {
+  border: none;
+  border-top: 2px dashed;
+  margin: 50px 0px;
+  text-align: center;
+}
 
+.divider {
+  border-image: repeating-linear-gradient(to right, #58391b 0%, #58391b 5%, transparent 5%, transparent 8.5%) 1;
+}
+
+.api-experience {
+  color: #4e3824;
+      background-color: rgb(244, 191, 127);
+      padding: 10px;
+      margin-bottom: 0px;
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+}
+.comic-info {
+  color: #4e3824;
+  padding: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column; /* Change flex direction to column */
+  justify-content: center;
+  align-items: center;
+  text-align: center; /* Center align the text */
+}
+
+h3{
+  margin: 10px;
+}
+.box-button {
+    margin-top: 20px;
+    background-image: url('https://img.freepik.com/free-vector/hand-painted-watercolor-abstract-watercolor-background_23-2149001482.jpg?w=1060&t=st=1687279153~exp=1687279753~hmac=b9d067dabffdb21ce1e987de2fb3c127a002abe8d5f2f9e785a676785a9bc2d8');
+    opacity: 0.8;
+    background-size: cover;
+    background-position: center;
+    color: rgb(19, 10, 2);
+    border: none;
+    padding: 20px 200px;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
 
   </style>
 </head>
@@ -153,7 +204,7 @@
   </header>
   <main>
     <div class="container">
-      <img src="./img/profile cop (3).jpg" alt="Profile Photo" height="300" class="profile-photo">
+      <img src="./img/profile_cop_(3).jpg" alt="Profile Photo" height="300" class="profile-photo">
 
       <section class="bio">
         <h2>About Me </h2>
@@ -178,6 +229,7 @@
           <i class="fas fa-envelope"></i>
         </a>
       </section>
+      
     <section class="portfolio">
         <p>
             Projects I would like to do. Analogue to portfolio
@@ -201,7 +253,31 @@
           <p>Website for a dog shelter</p>
         </div>
       </div>
+      <hr class="divider">
+
+      <section class="api-experience">
+        <p>
+          Here I want to show my work with API. Click the button below to see the comic generated especially for you.
+        </p>
+      </section>
       
-</main>
-</body>
-</html>
+      <section class="comic-info">
+        <button onclick="openAnotherPage()" class="box-button">₊‧⁺˖⋆  Show me!  ⋆˖⁺‧₊ </button>
+          
+        </div>
+      </section>
+      
+      <hr class="divider">
+    </main>
+   
+      
+      <script>
+      
+      
+      function openAnotherPage() {
+      var newWindow = window.open("http://127.0.0.1:5500/comic.html", "_blank");
+      newWindow.focus();
+    }
+
+      </script>
+       </body>

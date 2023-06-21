@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Comic</title>
+    <style>
+        body {
+            color: #4e3824;
+            background-color: #e5d0a6;
+            /* padding: 0 200px; */
+        }
+
+        .comic-info {
+            color: #4e3824;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            
+        }
+
+        .comic-actions {
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center; 
+        }
+        .comic-box p span#comic-title {
+        font-weight: bold; /* Add this line */
+    }
+        
+        .box-button {
+        background-color: white; /* Add this line */
+    }
+
+        .comic-actions p {
+            margin-right: 10px;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <section class="comic-info">
+       
+        <div class="comic-actions">
+            <p>If you don't like the comic,</p>
+            <button id="refresh-button" onclick="refreshComic()" class="box-button">regenerate it!</button>
+        </div>
+  
+
+        <div id="comic-details">
+            <div class="comic-box">
+            <p> <span id="comic-title"></span></p>
+            <p>Date: <span id="comic-date"></span></p>
+        </div>
+        
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <img id="comic-image" src="https://via.placeholder.com/300" alt="Imagine looking at some comic here, not at a placeholder">
+            </div>
+       
+    </div>
+    </section>
+
+    <script>
+        const email = 'a.kuzmich@innopolis.university';
+        const apiUrl = `https://fwd.innopolis.university/api/hw2?email=${email}`;
+
+        function refreshComic() {
+            fetch(apiUrl)
+                .then(response => response.text())
+                .then(text => {
+                    const trimmedText = text.trim();
+                    const number = parseFloat(trimmedText);
+                    const comicUrl = `https://fwd.innopolis.university/api/comic?id=${number}`;
+
+                    return fetch(comicUrl);
+                })
+                .then(response => response.json())
+                .then(comicData => {
+                    const imageUrl = comicData.img;
+                    const title = comicData.safe_title;
+                    const altText = comicData.alt;
+                    const publicationDate = new Date(comicData.year, comicData.month - 1, comicData.day);
+
+                    const comicImageElement = document.getElementById('comic-image');
+                    const comicTitleElement = document.getElementById('comic-title');
+                    const comicDateElement = document.getElementById('comic-date');
+                    comicImageElement.src = imageUrl;
+                    comicImageElement.alt = altText;
+                    comicTitleElement.innerHTML = title;
+                    comicDateElement.textContent = publicationDate.toLocaleDateString();
+                });
+        }
+
+        refreshComic();
+    </script>
+</body>
+</html>
