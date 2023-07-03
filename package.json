@@ -1,21 +1,29 @@
 {
-  "name": "hw-3",
+  "name": "krevetka",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "build": "webpack",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rollup --config rollup.config.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.2",
+    "@rollup/plugin-node-resolve": "^15.1.0",
+    "@rollup/plugin-terser": "^0.4.3",
+    "@rollup/plugin-typescript": "^11.1.2",
+    "date-fns": "^2.30.0",
+    "rollup": "^3.26.0",
     "ts-loader": "^9.4.4",
+    "tslib": "^2.6.0",
     "typescript": "^5.1.6",
     "webpack": "^5.88.1",
-    "webpack-cli": "^5.1.4"
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
   },
   "dependencies": {
-    "date-fns": "^2.30.0"
+    "@types/body-parser": "^1.19.2"
   }
 }

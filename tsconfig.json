@@ -1,18 +1,11 @@
 {
     "compilerOptions": {
-      "target": "es5",
-      "module": "commonjs",
-      "outDir": "dist",
+      "target": "ESNext",
+      "module": "ESNext",
+      "moduleResolution": "node",
       "strict": true,
-      "esModuleInterop": true,
-      "moduleResolution": "nodenext"
+       "noImplicitAny": true,
+      "allowSyntheticDefaultImports": true
     },
-    "include": [
-      "src/**/*.ts"
-    ],
-    "exclude": [
-      "node_modules",
-      "dist"
-    ]
+    "include": ["src/**/*.ts"]
   }
-  
