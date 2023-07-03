@@ -61,39 +61,6 @@
        
     </div>
     </section>
-
-    <script>
-        const email = 'a.kuzmich@innopolis.university';
-        const apiUrl = `https://fwd.innopolis.university/api/hw2?email=${email}`;
-
-        function refreshComic() {
-            fetch(apiUrl)
-                .then(response => response.text())
-                .then(text => {
-                    const trimmedText = text.trim();
-                    const number = parseFloat(trimmedText);
-                    const comicUrl = `https://fwd.innopolis.university/api/comic?id=${number}`;
-
-                    return fetch(comicUrl);
-                })
-                .then(response => response.json())
-                .then(comicData => {
-                    const imageUrl = comicData.img;
-                    const title = comicData.safe_title;
-                    const altText = comicData.alt;
-                    const publicationDate = new Date(comicData.year, comicData.month - 1, comicData.day);
-
-                    const comicImageElement = document.getElementById('comic-image');
-                    const comicTitleElement = document.getElementById('comic-title');
-                    const comicDateElement = document.getElementById('comic-date');
-                    comicImageElement.src = imageUrl;
-                    comicImageElement.alt = altText;
-                    comicTitleElement.innerHTML = title;
-                    comicDateElement.textContent = publicationDate.toLocaleDateString();
-                });
-        }
-
-        refreshComic();
-    </script>
+    <script src="dist/bundle.js"></script>
 </body>
 </html>
